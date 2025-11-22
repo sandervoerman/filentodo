@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Container } from '@mui/material';
 
 
 const darkTheme = createTheme({
@@ -35,16 +36,16 @@ const MyAppBar = () => {
 };
 
 
-
-
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <MyAppBar />
-      <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-        This Box renders as an HTML section element.
-      </Box>
+      <Container>
+        <MyAppBar />
+        <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
+          This Box renders as an HTML section element.
+        </Box>
+      </Container>
     </ThemeProvider>
   );
 };
