@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Container } from '@mui/material';
+import { Tasks } from './Tasks';
 
 
 const darkTheme = createTheme({
@@ -15,7 +16,7 @@ const darkTheme = createTheme({
 });
 
 
-const MyAppBar = () => {
+const Bar = () => {
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static">
@@ -40,11 +41,9 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Container>
-        <MyAppBar />
-        <Box component="section" sx={{ p: 2, border: '1px dashed grey' }}>
-          This Box renders as an HTML section element.
-        </Box>
+      <Container disableGutters>
+        <Bar />
+        <Tasks />
       </Container>
     </ThemeProvider>
   );
