@@ -1,0 +1,27 @@
+{
+  "[javascript]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "files.eol": "\n",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  }
+}
