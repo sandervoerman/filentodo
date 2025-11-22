@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 
 const Task = () => {
   return (
-    <Box sx={{ p: 1 }}>
+    <Box>
       This Box represents a single task item.
     </Box>
   );
