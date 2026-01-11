@@ -1,6 +1,8 @@
 import { useReducer } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Container, CssBaseline, Box } from '@mui/material';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
 
 import type { Task } from './model/tasks';
 import { taskReducer } from './model/tasks';
@@ -27,27 +29,28 @@ const initialTasks: Task[] = [
   { id: '8', title: 'Sample Task', completed: false, contexts: ['home'], projects: [] },
 ];
 
+const initalState = {
+  tasks: initialTasks,
+  selectedTaskId: null,
+};
+
 
 function App() {
-  const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
-
+  const [editorState, dispatch] = useReducer(taskReducer, initalState);
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Container disableGutters sx={{
         height: '100vh',
-        border: '1px solid red',
         display: 'flex',
         flexDirection: 'column',
       }}>
         <Header/>
-        <Box sx={{
-          flexGrow: 1,
-          border: '1px solid blue',
-        }}>
+        <Box sx={{ flexGrow: 1 }}>
           <TaskListPanel
-            tasks={tasks}
+            editorState={editorState}
             onCreateTask={(details) => dispatch({ type: 'create', details })}
+            onSelectTask={(id) => dispatch({ type: 'select', id })}
             onUpdateTask={(task) => dispatch({ type: 'update', task })}
             onDeleteTask={(id) => dispatch({ type: 'delete', id })}
           />
@@ -56,6 +59,6 @@ function App() {
       </Container>
     </ThemeProvider>
   );
-};
+}
 
 export default App;

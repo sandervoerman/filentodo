@@ -1,5 +1,6 @@
-import { Fab, Box } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import Fab from '@mui/material/Fab';
+import Box from '@mui/material/Box';
 
 
 export const Footer = () => {
